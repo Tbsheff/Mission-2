@@ -4,30 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mission__2
+namespace Mission__2 // create a new namespace
 {
-    internal class rollDice
+    internal class rollDice // create rollDice class
     {
-        public Dictionary<int, int> SimulateRolls(int numberOfRolls)
+        public Dictionary<int, int> SimulateRolls(int numberOfRolls) // SimulateRolls method
         {
-            Random random = new Random();
-            Dictionary<int, int> results = new Dictionary<int, int>();
+            Random random = new Random(); // new random object
+            Dictionary<int, int> results = new Dictionary<int, int>(); // new dictionary object
 
             for (int iCount = 2; iCount < 13; iCount++)
             {
-                results[iCount] = 0;
+                results[iCount] = 0; // initialize the results dictionary
             }
 
             for (int i = 0; i < numberOfRolls; i++)
             {
-                int dice1 = random.Next(1, 7);
+                int dice1 = random.Next(1, 7); // get random numbers
                 int dice2 = random.Next(1, 7);
 
-                int sum = dice1 + dice2;
+                int sum = dice1 + dice2; // add the random roll numbers together
 
                 if (results.ContainsKey(sum))
                 {
-                    results[sum]++;
+                    results[sum]++; // increment the counter for the sum
                 }
                 else
                 {
@@ -35,7 +35,7 @@ namespace Mission__2
                 }
             }
 
-            return results;
+            return results; // return results dictionary
         }
     }
 }
